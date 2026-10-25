@@ -1,0 +1,33 @@
+# Dependencies — installed locally for tests and bundled into dist/lambda.zip for deployment
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.zip
+
+# Resolved policy files generated at deploy time (may contain account IDs)
+infra/*.resolved.json
+infra/create-bucket-config.json
+
+# Local AWS credential capture (from `aws iam create-access-key`)
+access-keys.json
+access-keys-*.json
+
+# Lambda invocation responses saved during testing
+response-*.json
+response.json
+
+# Local env / secrets — never commit
+.env
+.env.*
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,38 @@
+{
+  "business": {
+    "name": "Northwind Botanicals",
+    "tagline": "Fictional plants for fictional problems.",
+    "description": "Northwind Botanicals is a fictional small business that designs and ships low-maintenance indoor plant kits. Every person, address, and detail in this dataset is fictional and non-sensitive. This file exists only to demo the AWS Weekend Challenge tool.",
+    "foundedYear": 2021
+  },
+  "hours": "Mon–Fri 09:00–17:00 PT. Closed weekends and US federal holidays.",
+  "services": [
+    "Starter Plant Kit (3 small low-light plants)",
+    "Desk Plant Kit (1 low-light plant)",
+    "Quarterly Refill Subscription (soil, fertilizer, care guide)"
+  ],
+  "pricing": {
+    "currency": "USD",
+    "starterKit": 39,
+    "deskKit": 29,
+    "subscriptionRefill": 19,
+    "shipping": "Flat 8 USD within the United States. Free shipping on orders over 75 USD.",
+    "consultation": "Free 20-minute virtual consultation on weekdays."
+  },
+  "contact": {
+    "email": "hello@northwind-botanicals.example",
+    "phone": "+1-555-0100",
+    "website": "https://www.northwind-botanicals.example",
+    "responseTimeHours": 24
+  },
+  "serviceArea": "Ships within the United States only. No international shipping.",
+  "policies": {
+    "cancellation": "Cancel any subscription refill before the next billing date. No fee.",
+    "refund": "30-day return window on unopened kits. Refund issued to the original payment method.",
+    "privacy": "We store only the customer name, shipping address, and order history. We do not sell data."
+  },
+  "faq": [
+    { "question": "Do you ship internationally?", "answer": "No, United States only." },
+    { "question": "Are the plants real?", "answer": "In this fictional dataset, yes — but only in your imagination." }
+  ]
+}

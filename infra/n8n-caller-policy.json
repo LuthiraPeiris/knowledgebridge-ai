@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeKnowledgeBridgeLambdaOnly",
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:ap-south-1:REPLACE_ACCOUNT_ID:function:knowledgebridge-ai"
+    }
+  ]
+}
