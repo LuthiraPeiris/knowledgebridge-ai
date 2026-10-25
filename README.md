@@ -8,18 +8,7 @@ The tool is one AWS Lambda function. The agent calls it through n8n's **AWS Lamb
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    U([User in n8n chat]) --> A[n8n AI Agent\nGroq + Memory]
-    A -->|Tool port| T[n8n AWS Lambda node\nUsable as AI tool]
-    T -->|Invoke API\nSigV4 / AWS_IAM| L[AWS Lambda\nNode.js 22.x\nAWS SDK v3]
-    L -->|GetObject\nleast-privilege role| S[(Amazon S3\nprivate bucket\nbusiness-knowledge.json)]
-    L -->|Structured JSON| T
-    T -->|Tool result| A
-    A -->|Answer + S3 source| U
-```
-
-**Data flow:** n8n AI Agent decides it needs business info → AWS Lambda node invokes `knowledgebridge-ai` with `{ topic: "hours" }` → Lambda assumes its execution role, calls `s3:GetObject` on the exact object → parses JSON → returns `{ status, message, source, requestedTopic, content, requestId }` → n8n passes the result back to the LLM → the agent answers the user and cites the S3 source.
+![KnowledgeBridge AI Architecture](https://github.com/LuthiraPeiris/knowledgebridge-ai/blob/d675e1101ae29f7ed55a9e3633410d5e65dfd0e6/docs/architecture/knowledgebridge-architecture.png)
 
 ---
 
@@ -217,7 +206,3 @@ Intentionally scoped for the one-day challenge. Not included:
 - **No WAF / rate limiting** — N/A since there's no HTTP endpoint exposed.
 
 ---
-
-## License
-
-MIT-0. See `package.json`.
